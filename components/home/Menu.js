@@ -12,19 +12,19 @@ export default function Menu({ items }) {
     }));
   }
 
-  const { childItemsWithChildren, childItemsWithoutChildren } = useMemo(() => {
-    const childItemsWithChildren = [];
-    const childItemsWithoutChildren = [];
-    items &&
-      items.forEach((data) => {
-        data.child_items.forEach((subItems) => {
-          if (subItems.child_items.length > 0) {
-            childItemsWithChildren.push(subItems);
-          } else {
-            childItemsWithoutChildren.push(subItems);
-          }
-        });
-      });
+//   const { childItemsWithChildren, childItemsWithoutChildren } = useMemo(() => {
+//     const childItemsWithChildren = [];
+//     const childItemsWithoutChildren = [];
+//     items &&
+//       items.forEach((data) => {
+//         data.child_items.forEach((subItems) => {
+//           if (subItems.child_items.length > 0) {
+//             childItemsWithChildren.push(subItems);
+//           } else {
+//             childItemsWithoutChildren.push(subItems);
+//           }
+//         });
+//       });
 
     return { childItemsWithChildren, childItemsWithoutChildren };
   }, [items.child_items]);
